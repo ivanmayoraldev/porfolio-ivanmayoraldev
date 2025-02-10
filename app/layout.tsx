@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ThemeProvider } from "next-themes"
 import { Geist } from "next/font/google"
 
-import Particles from "@/components/web/particles"
+import Particles from "@/components/particles"
 
 import "./styles/globals.css"
 

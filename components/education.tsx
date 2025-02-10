@@ -1,4 +1,4 @@
-import Card from "@/components/vfx/card";
+import Card from "@/components/card";
 import { GraduationCap } from "lucide-react";
 
 const vfxData = [

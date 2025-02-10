@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react"
 
-import { useMousePosition } from "@/utils/mouse"
 
 interface ParticlesProps {
   className?: string
@@ -23,7 +22,6 @@ export default function Particles({
   const canvasContainerRef = useRef<HTMLDivElement>(null)
   const context = useRef<CanvasRenderingContext2D | null>(null)
   const circles = useRef<Circle[]>([])
-  const mousePosition = useMousePosition()
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
@@ -41,9 +39,6 @@ export default function Particles({
     }
   }, [])
 
-  useEffect(() => {
-    onMouseMove()
-  }, [mousePosition.x, mousePosition.y])
 
   useEffect(() => {
     initCanvas()
@@ -54,19 +49,7 @@ export default function Particles({
     drawParticles()
   }
 
-  const onMouseMove = () => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect()
-      const { w, h } = canvasSize.current
-      const x = mousePosition.x - rect.left - w / 2
-      const y = mousePosition.y - rect.top - h / 2
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
-      if (inside) {
-        mouse.current.x = x
-        mouse.current.y = y
-      }
-    }
-  }
+  
 
   interface Circle {
     x: number

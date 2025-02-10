@@ -1,6 +1,6 @@
 import { Github, LibraryBig, MoveRight, ScreenShare } from "lucide-react";
 import Image from "next/image";
-import Card from "@/components/vfx/card";
+import Card from "@/components/card";
 
 export default function Projects() {
   // Datos manuales de proyectos
