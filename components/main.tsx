@@ -62,18 +62,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center inline-flex w-full flex-nowrap overflow-hidden text-sm font-medium text-neutral-500 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:text-neutral-400">
       <div className="flex flex-wrap items-center justify-between">
-        <a
-            href={porfData.workUrl}
-            className="flex items-center gap-1.5 rounded-xl bg-green-700/20 my-7 px-3 py-1.5 text-xl font-medium text-green-600 opacity-80 transition-opacity duration-150 hover:opacity-100 dark:bg-green-800/40 dark:text-green-200"
-            target="_blank"
-            aria-label="Link to Linkedin profile"
-        >
-            <span className="flex size-2 items-center">
-            <span className="absolute inline-flex size-1.5 animate-ping rounded-xl bg-green-600 dark:bg-green-300"></span>
-            <span className="relative inline-flex size-1.5 rounded-xl bg-green-600 dark:bg-green-300"></span>
-            </span>
-            {porfData.workLabel}
-        </a>
+  
         </div>
       <h1 className="text-9xl md:text-10xl font-bold mb-8 text-white-600">{porfData.name}</h1>
 

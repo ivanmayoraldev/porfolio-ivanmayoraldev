@@ -8,8 +8,9 @@ import Header from "@/components/header";
 export default function HomePage() {
   return (
     <>
-      <Main />
       <Header />
+      <Main />
+      
     </>
   );
 }
