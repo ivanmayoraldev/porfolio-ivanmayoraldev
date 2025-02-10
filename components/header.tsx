@@ -39,8 +39,8 @@ const porfData = {
 
 export default function Header() {
   return (
-    <div className="flex items-center justify-between w-full gap-4">
-      <div className="w-[30%] h-full px-3 py-5 flex flex-col gap-6 overflow-hidden rounded-2xl border bg-neutral-200/30 p-8 dark:bg-neutral-900">
+    <div className="flex items-center justify-between w-full gap-4 inline-flex w-full flex-nowrap overflow-hidden text-sm font-medium text-white-500 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+      <div className="w-[30%] h-full px-3 py-5 flex flex-col gap-6 overflow-hidden rounded-2xl p-8">
         <a
           href={porfData.workUrl}
           className="flex items-center gap-1.5 rounded-xl mx-3 my-3 px-3 py-1.5 text-xl font-medium text-white-600 opacity-100"

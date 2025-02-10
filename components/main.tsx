@@ -64,9 +64,9 @@ export default function HomePage() {
       <div className="flex flex-wrap items-center justify-between">
   
         </div>
-      <h1 className="text-9xl md:text-10xl font-bold mb-8 text-white-600">{porfData.name}</h1>
+      <h1 className="text-9xl md:text-10xl font-bold mb-8 my-7 text-white-600">{porfData.name}</h1>
 
-      <h2 className="text-4xl md:text-6xl font-medium mb-16 border-r-4 border-white pr-2 text-yellow-600">
+      <h2 className="text-4xl md:text-6xl font-medium my-7 mb-16 border-r-4 border-white pr-2 text-yellow-600">
         {texts[textIndex]?.substring(0, charIndex) || ""}
       </h2>
     </div>
