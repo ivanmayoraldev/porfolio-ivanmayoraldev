@@ -1,6 +1,5 @@
 import Card from "@/components/card"
 import SocialLinks from "@/components/social-links"
-import { ThemeSwitcher } from "@/components/theme-switcher"
 
 export default function Footer() {
   return (
@@ -8,7 +7,6 @@ export default function Footer() {
       <Card>
         <div className="flex justify-between">
           <SocialLinks />
-          <ThemeSwitcher />
         </div>
       </Card>
     </footer>

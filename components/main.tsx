@@ -1,5 +1,4 @@
-"use client";
-
+// use client;
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ArrowUpRight, MapPin, Sparkle } from "lucide-react";
@@ -7,41 +6,43 @@ import Image from "next/image";
 import Card from "@/components/card";
 import SocialLinks from "@/components/social-links";
 import Header from "@/components/header";
+import { Fade } from "react-awesome-reveal";
+
 const porfData = {
-    img: "/logo-web.png",
-    workUrl: "https://www.linkedin.com/in/ivan-mayoral/",
-    workLabel: "Looking for Proyects",
-    name: "Iván Mayoral",
-    description:
-      "Full-Stack Web Developer | VFX & GFX Creative",
-    location: "Madrid, España",
-    contactEmail: "ivanmayoral.dev@gmail.com",
-    technologies: [
-      "Premiere Pro",
-      "After Effects",
-      "Avid",
-      "Davinci Resolve",
-      "Cinema 4D",
-      "Adobe Photoshop",
-      "Adobe Indesign",
-      "Adobe Illustrator",
-      "Figma",
-      "Canva",
-    ],
-  };
+  img: "/logo-web.png",
+  workUrl: "https://www.linkedin.com/in/ivan-mayoral/",
+  workLabel: "Looking for Proyects",
+  name: "Iván Mayoral",
+  description: "Full-Stack Web Developer | VFX & GFX Creative",
+  location: "Madrid, España",
+  contactEmail: "ivanmayoral.dev@gmail.com",
+  technologies: [
+    "Premiere Pro",
+    "After Effects",
+    "Avid",
+    "Davinci Resolve",
+    "Cinema 4D",
+    "Adobe Photoshop",
+    "Adobe Indesign",
+    "Adobe Illustrator",
+    "Figma",
+    "Canva",
+  ],
+};
 
 export default function HomePage() {
   const texts = ["Full-Stack Web Developer", "VFX & GFX Creative"];
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+
   const speed = 100;
   const eraseSpeed = 50;
   const delay = 2000;
 
   useEffect(() => {
     const currentText = texts[textIndex] || ""; // Evitar "undefined"
-    
+
     if (!isDeleting && charIndex === currentText.length) {
       setTimeout(() => setIsDeleting(true), delay);
       return;
@@ -57,18 +58,19 @@ export default function HomePage() {
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, textIndex, texts]);
-  
 
   return (
-    <div className="flex flex-col items-center justify-center inline-flex w-full flex-nowrap overflow-hidden text-sm font-medium text-neutral-500 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] dark:text-neutral-400">
-      <div className="flex flex-wrap items-center justify-between">
-  
-        </div>
-      <h1 className="text-9xl md:text-10xl font-bold mb-8 my-7 text-white-600">{porfData.name}</h1>
-
-      <h2 className="text-4xl md:text-6xl font-medium my-7 mb-16 border-r-4 border-white pr-2 text-yellow-600">
-        {texts[textIndex]?.substring(0, charIndex) || ""}
-      </h2>
+    <div className="flex flex-col items-center justify-center w-full text-sm font-medium text-neutral-500 dark:text-neutral-400 my-7">
+      <h1 className="text-9xl md:text-10xl font-bold mb-4 text-white-600">
+        {porfData.name}
+      </h1>
+      <div
+        className="relative w-max h-[60px] md:h-[80px] text-4xl md:text-6xl font-medium border-r-1 border-white pr-2 text-yellow-600"
+        style={{ lineHeight: "60px", whiteSpace: "nowrap" }}
+      >
+        <span>{texts[textIndex]?.substring(0, charIndex)}</span>
+        {/* Cursor parpadeante */}
+      </div>
     </div>
   );
 }
