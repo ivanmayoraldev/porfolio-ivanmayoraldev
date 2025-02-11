@@ -10,6 +10,7 @@ import "./styles/globals.css"
 const geistFont = Geist({
   subsets: ["latin"],
 })
+
 export const metadata = {
   title: "Iván Mayoral - Porfolio",
   description:
@@ -76,11 +77,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={geistFont.className} suppressHydrationWarning>
+    <html lang="en" className={geistFont.className} suppressHydrationWarning>
+      <link rel="shortcut icon" href="/logo-web.png" type="image/x-icon" />
       <body className="bg-neutral-100 dark:bg-background">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

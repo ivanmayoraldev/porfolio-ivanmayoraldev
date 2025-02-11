@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -60,8 +61,8 @@
 
   h2 {
     position: relative;
-    min-width: 250px; /* Ajusta según tu diseño */
-    min-height: 50px; /* Ajusta según tu diseño */
+    min-width: 250px; 
+    min-height: 50px;
   }
   
   h2::after {
