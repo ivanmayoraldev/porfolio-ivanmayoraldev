@@ -8,6 +8,7 @@ import Header from "@/components/header";
 import About from "@/components/about";
 import Education from "@/components/education";
 import Footer from "@/components/footer";
+import Projects from "@/components/projects";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Header />
       <Main />
       <About />
+      <Projects />
       <Education />
     </>
   );

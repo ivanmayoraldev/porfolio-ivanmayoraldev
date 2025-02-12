@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import SocialLinks from "./social-links"; // Asegúrate de importar correctamente SocialLinks
+import SocialLinks from "./social-links";
 
 const porfData = {
-  img: "/logo-web.png", // Ruta de tu imagen
+  img: "/logo-web.png", 
   description:
     "Passionate about creating digital experiences and striking visuals. I combine technical skills with creativity to bring ideas to life. Always eager to work on innovative projects that make an impact.",
   cvUrl: "/ivan-mayoral-cv.pdf", // URL del archivo PDF de tu CV
@@ -15,7 +15,6 @@ export default function AboutMe() {
   return (
     <section className="flex flex-col items-center justify-center py-4">
       <div className="flex items-center w-full gap-4 inline-flex flex-nowrap overflow-hidden text-sm font-medium text-neutral-600 dark:text-neutral-400 mb-4 ml-16">
-            {/* Ubicación */}
             <div className="flex items-center gap-2">
               <span className="flex size-2 items-center justify-center rounded-xl bg-neutral-200 dark:bg-neutral-800">
                 <svg
@@ -41,7 +40,6 @@ export default function AboutMe() {
               <span>{porfData.location}</span>
             </div>
 
-            {/* Correo Electrónico */}
             <div className="flex items-center gap-2">
               <span className="flex size-2 items-center justify-center rounded-xl bg-neutral-200 dark:bg-neutral-800">
                 <svg
@@ -73,13 +71,10 @@ export default function AboutMe() {
             {porfData.description}
           </h4>
 
-          {/* Social Links */}
           <SocialLinks />
         </div>
 
-        {/* Derecha: Foto y botón para descargar CV */}
         <div className="flex flex-col items-center md:items-end space-y-4 md:w-1/2">
-          {/* Foto de perfil */}
           <Image
             src={porfData.img}
             alt="Perfil"

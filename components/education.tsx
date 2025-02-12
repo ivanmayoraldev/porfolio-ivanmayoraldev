@@ -6,7 +6,7 @@ const edData = [
     id: 1,
     time: "2024 - Actually",
     title: "Desarrollo de Aplicaciones Web (DAW)",
-    educationUrl: "https://www.juanxxiii.net/",
+    educationUrl: "https://www.juanxxiii.net/tecnico-superior-en-desarrollo-de-aplicaciones-web/",
     educationName: "CFP JuanXXIII",
     details: [
       "Design web pages and deploy/install applications on servers with browser and server programming, using the most in-demand professional technologies.",
@@ -44,13 +44,9 @@ export default function ListEduExp() {
         <GraduationCap size={32} />
         Education & Experience
       </h2>
-      {/* Contenedor principal */}
       <Fade>
         <div className="relative max-w-5xl w-full">
-          {/* Línea central */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-yellow-600"></div>
-
-          {/* Lista combinada */}
           <ol className="relative items-centerflex flex-col space-y-8">
             {edData.map((education, index) => (
               <EducationItem
@@ -93,6 +89,11 @@ function EducationItem({
       ? "ml-auto mr-0 md:mr-1/4 flex-row-reverse"
       : "mr-auto ml-0 md:ml-1/4 flex-row";
 
+  // Función para manejar el clic
+  const handleClick = () => {
+    window.open(educationUrl, "_blank");
+  };
+
   return (
     <li className={`flex ${classes} relative`}>
       {/* Punto central */}
@@ -100,9 +101,10 @@ function EducationItem({
         className={`absolute top-4 left-1/2 transform -translate-x-1/2 size-3 rounded-full border border-yellow-600 bg-yellow-600`}
       ></div>
 
-      {/* Contenido */}
+      {/* Contenido clickeable */}
       <div
-        className={`rounded-xl p-4 duration-100 hover:bg-neutral-300/20 dark:hover:bg-neutral-800/20 max-w-sm ${
+        onClick={handleClick} // Manejador de clic
+        className={`rounded-xl p-4 duration-100 hover:bg-neutral-300/20 dark:hover:bg-neutral-800/20 max-w-sm cursor-pointer ${
           position === "left" ? "text-right" : "text-left"
         }`}
       >
@@ -113,13 +115,9 @@ function EducationItem({
           <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
             {title}
           </h3>
-          <a
-            href={educationUrl}
-            target="_blank"
-            className="text-sm font-medium text-neutral-700 opacity-80 duration-150 hover:opacity-100 dark:text-neutral-400"
-          >
+          <span className="text-sm font-medium text-neutral-700 opacity-80 duration-150 hover:opacity-100 dark:text-neutral-400">
             {educationName}
-          </a>
+          </span>
           <ul className="py-3">
             {details.map((detail, idx) => (
               <li
@@ -156,16 +154,19 @@ function ExperienceItem({
       ? "mr-auto ml-0 md:ml-1/4 flex-row"
       : "ml-auto mr-0 md:mr-1/4 flex-row-reverse";
 
+  const handleClick = () => {
+    window.open(companyUrl, "_blank");
+  };
+
   return (
     <li className={`flex ${classes} relative`}>
-      {/* Punto central */}
       <div
         className={`absolute top-4 left-1/2 transform -translate-x-1/2 size-3 rounded-full border border-yellow-600 bg-yellow-600`}
       ></div>
 
-      {/* Contenido */}
       <div
-        className={`rounded-xl p-4 duration-100 hover:bg-neutral-300/20 dark:hover:bg-neutral-800/20 max-w-sm ${
+        onClick={handleClick} 
+        className={`rounded-xl p-4 duration-100 hover:bg-neutral-300/20 dark:hover:bg-neutral-800/20 max-w-sm cursor-pointer ${
           position === "left" ? "text-left" : "text-right"
         }`}
       >
@@ -176,13 +177,9 @@ function ExperienceItem({
           <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
             {title}
           </h3>
-          <a
-            href={companyUrl}
-            target="_blank"
-            className="text-sm font-medium text-neutral-700 opacity-80 duration-150 hover:opacity-100 dark:text-neutral-400"
-          >
+          <span className="text-sm font-medium text-neutral-700 opacity-80 duration-150 hover:opacity-100 dark:text-neutral-400">
             {companyName}
-          </a>
+          </span>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2 py-3">
             {description}
           </p>

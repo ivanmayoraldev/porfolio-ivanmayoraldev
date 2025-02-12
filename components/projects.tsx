@@ -3,25 +3,40 @@ import Image from "next/image";
 import Card from "@/components/card";
 
 export default function Projects() {
-  // Datos manuales de proyectos
   const manualProjects = [
     {
-      title: "Project Title 1",
+      title: "Netflix Clone (working on)",
       description:
-        "A brief description of the project and its purpose. This project showcases my skills in React and Tailwind CSS.",
-      technologies: ["React", "Next.js", "Tailwind CSS"],
-      img: "/path/to/project1.jpg", // Ruta de la imagen del proyecto
-      githubLink: "https://github.com/your-username/project1",
+        "A Netflix clone developed in Interface Design, focusing on enhancing functional design with Figma and collaborative teamwork.",
+      technologies: ["JavaScript", "TypeScript", "SCSS", "Figma"],
+      img: "DawFlix.png",
+      githubLink: "https://github.com/ivanmayoraldev/dawflix",
       previewLink: "https://project1-example.com",
     },
     {
-      title: "Project Title 2",
+      title: "Art Us (working on)",
+      description:
+        "Art Us is a global platform for artists to share, collaborate, monetize, and innovate, creating an inclusive and collaborative artistic community.",
+      technologies: ["React", "Python", "PostGreSQL", "TailwindCSS"],
+      img: "ArtUs.png",
+      githubLink: "https://github.com/ivanmayoraldev/Art-Us",
+      previewLink: "https://project2-example.com",
+    },
+    {
+      title: "The Bliss",
       description:
         "Another project that highlights my expertise in backend development with Node.js and MongoDB.",
-      technologies: ["Node.js", "Express", "MongoDB"],
-      img: "/path/to/project2.jpg", // Ruta de la imagen del proyecto
-      githubLink: "https://github.com/your-username/project2",
+      technologies: ["Premiere Pro", "Davinci Resolve", "Google Ads"],
+      img: "TheBliss.png",
       previewLink: "https://project2-example.com",
+    },
+    {
+      title: "Peereira7",
+      description:
+        "Video editing, banner and thumbnail design. Social media management for 3 years.",
+      technologies: ["Premiere Pro", "After Effects", "Photoshop", "Google Ads"],
+      img: "Peereira7.png",
+      previewLink: "https://www.youtube.com/@Peereira7",
     },
   ];
 
@@ -31,20 +46,33 @@ export default function Projects() {
         <LibraryBig />
         Projects
       </h2>
-      <div className="grid gap-3 md:grid-cols-2">
+
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
         {manualProjects.map((project) => (
           <ProjectItem key={project.title} {...project} />
         ))}
       </div>
-      <a
-        href="https://github.com/astrxnomo"
-        target="_blank"
-        className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-neutral-200 px-4 py-2 text-sm font-medium opacity-80 transition-opacity duration-150 hover:opacity-100 dark:bg-neutral-800 md:w-auto"
-        aria-label="Explore more projects"
-      >
-        More projects
-        <MoveRight className="size-4 opacity-70 duration-200 group-hover:translate-x-[1.5px] group-hover:opacity-100" />
-      </a>
+
+      <div className="flex w-full justify-between gap-4 mt-4">
+        <a
+          href="https://github.com/ivanmayoraldev"
+          target="_blank"
+          className="group flex w-1/2 items-center justify-center rounded-xl bg-neutral-200 px-4 py-2 text-sm font-medium opacity-80 transition-opacity duration-150 hover:opacity-100 dark:bg-neutral-800"
+          aria-label="Explore more projects"
+        >
+          More Web Projects
+          <MoveRight className="size-4 opacity-70 duration-200 group-hover:translate-x-[1.5px] group-hover:opacity-100" />
+        </a>
+        <a
+          href="https://www.behance.net/ivanmayoralvfx"
+          target="_blank"
+          className="group flex w-1/2 items-center justify-center rounded-xl bg-neutral-200 px-4 py-2 text-sm font-medium opacity-80 transition-opacity duration-150 hover:opacity-100 dark:bg-neutral-800"
+          aria-label="Explore more projects"
+        >
+          More VFX & GFX Projects
+          <MoveRight className="size-4 opacity-70 duration-200 group-hover:translate-x-[1.5px] group-hover:opacity-100" />
+        </a>
+      </div>
     </Card>
   );
 }
@@ -67,13 +95,13 @@ function ProjectItem({
   return (
     <div className="flex flex-col gap-3 rounded-xl p-4 duration-100 hover:bg-neutral-300/20 dark:hover:bg-neutral-800/20">
       <div className="flex flex-col">
-        <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-300">
+        <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-300 py-2">
           {title}
         </h3>
-        <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400 py-2">
           {description}
         </p>
-        <div className="mb-2 flex gap-1">
+        <div className="mb-2 flex gap-1 py-2 flex-wrap">
           {technologies.map((tech) => (
             <span
               key={tech}
@@ -93,6 +121,7 @@ function ProjectItem({
           />
         </div>
       </div>
+      
       <div className="mt-1 flex gap-2">
         {githubLink && (
           <a

@@ -72,6 +72,23 @@
     height: 100%;
     visibility: hidden;
   }
+
+  @keyframes infiniteScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .infinite-scroll {
+    animation: infiniteScroll 20s linear infinite;
+    white-space: nowrap;
+  }
+
+  
+
 }
 
 @layer base {
